@@ -1,112 +1,108 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Profil Imanuel Lombok</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Profil — Imanuel Paulus Rizki Lombok</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <meta name="description" content="Profil mahasiswa — Imanuel Paulus Rizki Lombok. CV singkat, kontak, dan portfolio tugas." />
   <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f2f4f8;
-      color: #333;
-      margin: 0;
-      padding: 0;
+    /* Reset + base */
+    :root{
+      --bg:#0f1724; --card:#0b1220; --muted:#9aa4b2; --accent:#60a5fa; --glass: rgba(255,255,255,0.04);
+      --glass-2: rgba(255,255,255,0.03);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background: linear-gradient(180deg,var(--bg) 0%, #071028 100%); color:#e6eef8; -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale; padding:32px;
+    }
+    .container{max-width:980px;margin:0 auto}
+
+    /* Card */
+    .card{background:linear-gradient(180deg,var(--card), rgba(8,12,18,0.6)); border-radius:14px; padding:28px; box-shadow:0 10px 30px rgba(2,6,23,0.6);}
+
+    header{display:flex;gap:20px;align-items:center}
+    .avatar{width:110px;height:110px;border-radius:16px;flex:0 0 110px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:#111}
+    .avatar img{width:100%;height:100%;object-fit:cover;border-radius:16px}
+    h1{margin:0;font-size:22px}
+    .subtitle{color:var(--muted);margin-top:6px;font-size:14px}
+
+    .grid{display:grid;grid-template-columns:1fr 320px;gap:22px;margin-top:20px}
+    .panel{background:var(--glass);border-radius:10px;padding:16px}
+
+    /* contact list */
+    .contact-list{display:flex;flex-direction:column;gap:10px}
+    .contact-item{display:flex;gap:10px;align-items:center}
+    .chip{padding:8px 12px;background:var(--glass-2);border-radius:999px;font-size:13px}
+
+    /* about */
+    .about{line-height:1.6;color:#d9e6f7}
+    .meta{display:flex;flex-wrap:wrap;gap:12px;margin-top:14px}
+    .meta .m{background:transparent;border:1px solid rgba(255,255,255,0.04);padding:10px;border-radius:8px;color:var(--muted);font-size:13px}
+
+    /* sections */
+    .section{margin-top:18px}
+    .section h2{font-size:16px;margin:0 0 10px 0}
+    .skill-list{display:flex;gap:8px;flex-wrap:wrap}
+    .skill{background:rgba(255,255,255,0.03);padding:8px 10px;border-radius:8px;font-size:13px}
+
+    footer{margin-top:18px;color:var(--muted);font-size:13px;text-align:center}
+
+    /* responsive */
+    @media (max-width:880px){
+      .grid{grid-template-columns:1fr;}
+      .avatar{width:88px;height:88px}
     }
 
-    header {
-      background: #0055aa;
-      color: white;
-      text-align: center;
-      padding: 2rem 1rem;
-    }
-
-    header img {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      border: 3px solid white;
-      margin-bottom: 1rem;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 2rem;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      margin-top: 0.5rem;
-    }
-
-    section {
-      background: white;
-      margin: 1.5rem auto;
-      padding: 1.5rem;
-      border-radius: 12px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      max-width: 900px;
-    }
-
-    h2 {
-      color: #0055aa;
-      border-bottom: 2px solid #0055aa;
-      padding-bottom: 0.5rem;
-    }
-
-    .button {
-      display: inline-block;
-      background: #0055aa;
-      color: white;
-      padding: 10px 16px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      margin-top: 10px;
-    }
-
-    .button:hover {
-      background: #0077ff;
-    }
-
-    iframe {
-      width: 100%;
-      height: 600px;
-      border: 1px solid #ddd;
-      border-radius: 10px;
-    }
-
-    footer {
-      background: #0055aa;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-      font-size: 0.9rem;
-      margin-top: 2rem;
-    }
+    /* small util */
+    a {color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .btn{display:inline-block;padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,var(--accent),#7c3aed);color:#062034;font-weight:600}
   </style>
 </head>
-
 <body>
-  <header>
-    <img src="foto-profil.jpeg" alt="Foto Profil Imanuel">
-    <h1>Imanuel Lombok</h1>
-    <p>Mahasiswa Kimia | Universitas Sam Ratulangi | Manado</p>
-  </header>
+  <div class="container">
+    <div class="card">
+      <header>
+        <div class="avatar" aria-hidden="true">
+          <img src="foto-profil.jpg" alt="Foto Profil Imanuel" />
+        </div>
+        <div style="flex:1">
+          <h1>Imanuel P. R. Lombok</h1>
+          <div class="subtitle">Mahasiswa Jurusan Kimia — Universitas (NIM: 241011010036)</div>
+          <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+            <span class="chip">Kumelembuai, 18 oktober 2005</span>
+            <span class="chip">Kumelembuai, minahasa selatan</span>
+            <span class="chip">Kristen Protestan</span>
+          </div>
+        </div>
+        <div style="text-align:right">
+          <a class="btn" href="#Contact">Contact</a>
+        </div>
+      </header>
 
-  <section>
-    <h2>Tentang Saya</h2>
-    <p>
-      Halo! Saya <strong>Imanuel Lombok</strong>, mahasiswa program studi Kimia yang tertarik dalam bidang 
-      kimia organik, energi bersih, dan pengembangan bahan alam bernilai ekonomi. 
-      Website ini saya buat untuk tugas mata kuliah Teknologi Informasi serta sebagai portofolio pribadi saya.
-    </p>
-  </section>
+      <div class="grid">
+        <main>
+          <section class="panel about">
+            <h2>About Me</h2>
+            <p>Saya, Imanuel (eL), adalah mahasiswa jurusan Kimia yang lahir di kumelembuai, 18 oktober 2005 dan berasal dari Kumelembuai Atas, kecamatan Kumelembuai, Kabupaten Minahasa Selatan. </p>
 
-  <section>
+            <div class="meta">
+              <div class="m">Bidang minat: Analitik, Anorganik, Organik</div>
+              <div class="m">Hobi: Badminton, Voli</div>
+            </div>
+          </section>
+
+          <section>
     <h2>Makalah Saya</h2>
     <p>
       Berikut ini adalah makalah saya yang berjudul 
-      <strong>“Efektivitas PLTS Likupang sebagai Sumber Energi Bersih di Indonesia.”</strong>  
+      <strong>“Senyawa Formalin.”</strong>  
       Kamu dapat membaca langsung di bawah ini atau mengunduhnya.
     </p>
 
@@ -117,14 +113,37 @@
     <a href="Makalah-Imanuel.pdf" class="button" download>📄 Unduh Makalah (PDF)</a>
   </section>
 
-  <section>
-    <h2>Kontak</h2>
-    <p>📧 Email: imanuellombok@example.com</p>
-    <p>📱 Instagram: <a href="https://instagram.com/" target="_blank">@imanuellombok</a></p>
-  </section>
+        </main>
 
-  <footer>
-    &copy; 2025 Imanuel Lombok
-  </footer>
+        <aside>
+          <div class="panel">
+            <h2>Kontak</h2>
+            <div class="contact-list" id="Contact">
+              <div class="contact-item"><strong>Email:</strong>&nbsp;<a href="mailto:imanuellombok@gmail.com">imanuellombok@gmail.com</a></div>
+              <div class="contact-item"><strong>Instagram:</strong>&nbsp;<a href="https://instagram.com/imanuellombok" target="_blank" rel="noreferrer">@imanuellombok</a></div>
+              <div class="contact-item"><strong>Facebook:</strong>&nbsp;<a href="https://facebook.com/ImanuelL" target="_blank" rel="noreferrer">Imanuel Lombok</a></div>
+            </div>
+
+            <div style="margin-top:12px">
+             
+            </div>
+          </div>
+          
+          </div>
+        </aside>
+      </div>
+
+      <footer>
+        © 2025 Dibuat oleh Imanuel P. R. Lombok
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    // Simple enhancement: if page opened on small device, scroll to contact when hash used
+    if(location.hash === '#kontak'){
+      document.getElementById('kontak')?.scrollIntoView({behavior:'smooth'});
+    }
+  </script>
 </body>
 </html>
